@@ -1,0 +1,10 @@
+<?php
+require_once("config.php");
+require_once("controller/index.php");
+if(isset($_GET['m'])):
+    if(method_exists("modelController",$_GET['m'])):
+        modelController::{$_GET['m']}();
+    endif;
+else:
+    modelController::index();
+endif;
